@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<li id="city"><label>所在位置</label>
+			<select class="prov" name="province"><option value="浙江">浙江</option></select>  
+		    <select class="city" name="city" disabled="disabled"><option value="杭州">杭州</option></select> 
+		    <select class="dist" name="area" disabled="disabled"><option value="西湖区">西湖区</option></select>
+		</li>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cityselect.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//加载城市选择插件
+		$("#city").citySelect({
+			url:"js/city_sina.json",
+			prov:"浙江", //省份 
+			city:"杭州", //城市 
+			dist:"西湖区", //区县 
+		    required:true,
+		    nodata:"none" //当子集无数据时，隐藏select 
+		});
+		</script>
+	</body>
+</html>
